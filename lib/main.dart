@@ -18,16 +18,18 @@ class _MyAppState extends State<MyApp> {
     print('data');
     myFunction();
   }
+
   void myFunction() async {
-      var url = Uri.parse('http://10.2.3.113:8000/getData.php'); 
-      var data = {};
-      var response = await http.get(url);
-      if (response.statusCode == 200) {
-        print(response);
-      } else {
-        print('A network error occurred');
-      }
-}
+    var url = Uri.parse('http://10.2.3.113:8000/getData.php');
+    var data = {};
+    var response = await http.get(url);
+    if (response.statusCode == 200) {
+      print(response.body);
+    } else {
+      print('A network error occurred');
+    }
+  }
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
